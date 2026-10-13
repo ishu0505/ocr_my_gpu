@@ -2,7 +2,12 @@
 name = "gpu-my-ocr-vllm-runtime"
 version = "0.1.0"
 requires-python = ">=3.11,<3.13"
-dependencies = []
+dependencies = [
+    "nvidia-ml-py==13.615.71",
+    "pymupdf==1.28.2",
+    "reportlab==5.0.1",
+    "vllm==0.31.0",
+]
 
 # Add PyTorch and engine with `uv add` only after GPU/driver checks.
 # Keep each environment's uv.lock tracked once generated.

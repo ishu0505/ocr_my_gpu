@@ -1,12 +1,22 @@
+# Reference settings; the Phase 1 module CLI records authoritative config.json per run.
 experiment:
-  name: baseline_smoke
+  name: phase1_preliminary_baseline
   seed: 42
-  warmup_requests: 3
-  repetitions: 3
-  page_count: 10
+  warmup_requests: 1
+  repetitions: 2
+  underlying_document_count: 10
+  page_count: 30
+  document_indices: [1, 10]
+  variants: [digital, scan_high, scan_degraded]
   model: Qwen/Qwen3-VL-2B-Instruct
+  model_revision: 89644892e4d85e24eaac8bacfd4f463576704203
   engine: transformers
   precision: bf16
+  attention: sdpa
   concurrency: [1]
-  max_output_tokens: 512
-  page_longest_side: 1024
+  max_output_tokens: 1024
+  prompt_version: financial-extraction-v2
+  render_dpi: 150
+  min_pixels: 262144
+  max_pixels: 1310720
+  do_sample: false

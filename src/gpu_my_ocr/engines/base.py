@@ -1,6 +1,7 @@
 """Minimal engine interface; concrete adapters arrive in phases 1 and 2."""
 
 from typing import Protocol
+
 from gpu_my_ocr.models import InferenceRequest, InferenceResult
 
 

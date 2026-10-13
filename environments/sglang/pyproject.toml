@@ -2,7 +2,20 @@
 name = "gpu-my-ocr-sglang-runtime"
 version = "0.1.0"
 requires-python = ">=3.11,<3.13"
-dependencies = []
+dependencies = [
+    "nvidia-cudnn-cu12==9.16.0.29",
+    "nvidia-ml-py==13.615.71",
+    "pymupdf==1.28.2",
+    "reportlab==5.0.1",
+    "sglang==0.5.6",
+]
 
 # Add PyTorch and engine with `uv add` only after GPU/driver checks.
 # Keep each environment's uv.lock tracked once generated.
+
+
+[tool.uv]
+# SGLang's Qwen3-VL guard requires cuDNN >=9.15 for torch 2.9.1 Conv3d BF16.
+# Official upstream workaround: https://github.com/pytorch/pytorch/issues/168167
+# Override torch's old exact cuDNN pin; keep this change isolated and GPU-validate it.
+override-dependencies = ["nvidia-cudnn-cu12==9.16.0.29"]

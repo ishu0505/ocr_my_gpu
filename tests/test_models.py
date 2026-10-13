@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from gpu_my_ocr.models import InferenceRequest, InferenceResult
 
 
