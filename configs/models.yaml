@@ -1,0 +1,12 @@
+# Target candidates only: runtime/precision support must be checked per engine.
+models:
+  - id: Qwen/Qwen3-VL-2B-Instruct
+    role: baseline
+  - id: Qwen/Qwen2.5-VL-3B-Instruct
+    role: model_size_comparison
+  - id: PaddlePaddle/PaddleOCR-VL-1.5
+    role: specialized_document_parsing
+    note: Verify latest stable/version, official runtime and compatibility before running.
+  - id: allenai/olmOCR-2-7B-1025
+    role: stretch_quantized
+    note: Full BF16 does not fit 8GB; inspect quantization and runtime compatibility.

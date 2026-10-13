@@ -1,0 +1,12 @@
+experiment:
+  name: baseline_smoke
+  seed: 42
+  warmup_requests: 3
+  repetitions: 3
+  page_count: 10
+  model: Qwen/Qwen3-VL-2B-Instruct
+  engine: transformers
+  precision: bf16
+  concurrency: [1]
+  max_output_tokens: 512
+  page_longest_side: 1024
